@@ -14,7 +14,7 @@ def deepl_remote_rust(text: str, to_lang: str = None, **kargs) -> str:
         'source_lang': 'auto',
         'target_lang': lang_tgt.upper()
     }
-    r = requests.post('http://45.145.74.103:1337/translate',
+    r = requests.post('https://api.deepl.com/v2/translate?auth_key=f6a13b32-b08b-3567-5e41-916a8f76058b',
                       data=json.dumps(payload))
     try:
         if r.status_code == 200 and 'application/json' in r.headers.get(
